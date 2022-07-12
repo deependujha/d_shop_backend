@@ -1,4 +1,5 @@
 const express = require("express");
+require('./conn/mongo')
 const app = express();
 const port = 3000;
 

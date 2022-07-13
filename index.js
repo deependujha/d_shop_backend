@@ -3,10 +3,12 @@ require("./conn/mongo");
 const app = express();
 const port = 3000;
 app.use(express.static("public"));
-// const router = new express.Router();
 const productRouter = require("./router/product");
+const orderRouter = require("./router/order_history");
+app.use(express.json());
 
 app.use("/product", productRouter);
+app.use("/order", orderRouter);
 
 app.get("", (req, res) => {
   res.send("hello world");

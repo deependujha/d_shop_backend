@@ -2,6 +2,7 @@ const express = require("express");
 require("./conn/mongo");
 const app = express();
 const port = 3000;
+app.use(express.static("public"));
 const {
   UserAccountInfo,
   UserOrderHistory,

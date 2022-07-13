@@ -11,8 +11,8 @@ router.post("/", async (req, res) => {
       product_id: prd,
       boughtOn: Date.now(),
     });
-    const res = await orderData.save();
-    res.send(res);
+    const result = await orderData.save();
+    res.send(result);
   } catch (e) {
     res.send(e);
   }

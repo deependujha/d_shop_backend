@@ -5,10 +5,12 @@ const port = 3000;
 app.use(express.static("public"));
 const productRouter = require("./router/product");
 const orderRouter = require("./router/order_history");
+const accountRouter = require("./router/account");
 app.use(express.json());
 
 app.use("/product", productRouter);
 app.use("/order", orderRouter);
+app.use("/account", accountRouter);
 
 app.get("", (req, res) => {
   res.send("hello world");

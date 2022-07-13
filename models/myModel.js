@@ -29,6 +29,7 @@ const userOrderHistory = new mongoose.Schema({
     type: String,
     require: true,
   },
+  boughtOn: Date,
 });
 
 const product = new mongoose.Schema({

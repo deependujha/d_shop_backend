@@ -2,7 +2,11 @@ const express = require("express");
 require("./conn/mongo");
 const app = express();
 const port = 3000;
-const { Teacher, Student } = require("./models/myModel");
+const {
+  UserAccountInfo,
+  UserOrderHistory,
+  Product,
+} = require("./models/myModel");
 
 app.get("", (req, res) => {
   res.send("hello world");

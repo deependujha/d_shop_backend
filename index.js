@@ -14,6 +14,10 @@ app.get("", (req, res) => {
   res.send("hello world");
 });
 
+app.post("/buyProduct", (req, res) => {
+  res.send({ name: "Deependu Jha" });
+});
+
 app.listen(port, () => {
   console.log(`App started on http://localhost:${port}`);
 });

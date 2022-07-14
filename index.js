@@ -14,12 +14,10 @@ app.use("/product", productRouter);
 app.use("/order", orderRouter);
 app.use("/account", accountRouter);
 
-app.get("", (req, res) => {
-  res.send("hello world");
+app.get("/", (req, res) => {
+  res.send("Hello World");
 });
 
-
-
 app.listen(port, () => {
-  console.log(`App started on http://localhost:${port}`);
+  console.log(`App Listening on http://localhost:${port}`);
 });

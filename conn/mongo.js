@@ -3,10 +3,10 @@ require("dotenv").config();
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.USRNAME}:${process.env.PASSWD}@cluster0.5ocuc97.mongodb.net/?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.ATLAS_USERNAME}:${process.env.ATLAS_PASSWORD}@cluster0.5ocuc97.mongodb.net/?retryWrites=true&w=majority`
   )
   .then(() => {
-    console.log(`connected to mongodb`);
+    console.log(`Connected To Database !`);
   })
   .catch((err) => {
     console.log(err);

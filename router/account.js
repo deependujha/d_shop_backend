@@ -15,7 +15,7 @@ router.get("/:addr", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/new", async (req, res) => {
   try {
     const userData = new UserAccountInfo(req.body);
     const result = await userData.save();

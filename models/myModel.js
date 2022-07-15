@@ -42,6 +42,7 @@ const product = new mongoose.Schema({
   product_descr: String,
   price: Number,
   image: String,
+  bought_by: String,
 });
 
 const UserAccountInfo = mongoose.model("User_Account_Info", userAccountInfo);

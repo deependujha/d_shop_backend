@@ -6,8 +6,8 @@ mongoose
     `mongodb+srv://${process.env.ATLAS_USERNAME}:${process.env.ATLAS_PASSWORD}@cluster0.5ocuc97.mongodb.net/?retryWrites=true&w=majority`
   )
   .then(() => {
-    console.log(`Connected To Database !`);
+    // console.log(`Connected To Database !`);
   })
   .catch((err) => {
-    console.log(err);
+    // console.log(err);
   });

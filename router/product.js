@@ -25,42 +25,42 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/insert", async (req, res) => {
-  try {
-    const tb1 = new Product({
-      product_id: "1011",
-      product_name: "Chromebook",
-      product_descr:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, ratione.",
-      price: 199,
+// router.post("/insert", async (req, res) => {
+//   try {
+//     const tb1 = new Product({
+//       product_id: "1011",
+//       product_name: "Chromebook",
+//       product_descr:
+//         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, ratione.",
+//       price: 199,
 
-      image: "/products/tablet/chromebook.png",
-      bought_by: "",
-    });
-    const tb2 = new Product({
-      product_id: "1012",
-      product_name: "i-Pad",
-      product_descr:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, ratione.",
-      price: 350,
-      image: "/products/tablet/ipad.png",
-      bought_by: "",
-    });
-    const tb3 = new Product({
-      product_id: "1013",
-      product_name: "Huwaei tablet",
-      product_descr:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, ratione.",
-      price: 100,
-      image: "/products/tablet/huwaei.png",
-      bought_by: "",
-    });
+//       image: "/products/tablet/chromebook.png",
+//       bought_by: "",
+//     });
+//     const tb2 = new Product({
+//       product_id: "1012",
+//       product_name: "i-Pad",
+//       product_descr:
+//         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, ratione.",
+//       price: 350,
+//       image: "/products/tablet/ipad.png",
+//       bought_by: "",
+//     });
+//     const tb3 = new Product({
+//       product_id: "1013",
+//       product_name: "Huwaei tablet",
+//       product_descr:
+//         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, ratione.",
+//       price: 100,
+//       image: "/products/tablet/huwaei.png",
+//       bought_by: "",
+//     });
 
-    const result = await Product.insertMany([tb1, tb2, tb3]);
-    res.status(201).send(result);
-  } catch (e) {
-    res.status(404).send(e);
-  }
-});
+//     const result = await Product.insertMany([tb1, tb2, tb3]);
+//     res.status(201).send(result);
+//   } catch (e) {
+//     res.status(404).send(e);
+//   }
+// });
 
 module.exports = router;

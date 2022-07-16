@@ -1,7 +1,7 @@
 const express = require("express");
 require("./conn/mongo");
 const app = express();
-const port = 3000;
+const port = 5000;
 
 const productRouter = require("./router/product");
 const orderRouter = require("./router/order_history");

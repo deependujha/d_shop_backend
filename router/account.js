@@ -4,14 +4,18 @@ const { UserAccountInfo } = require("../models/myModel");
 
 router.get("/:addr", async (req, res) => {
   try {
-    const data = await UserAccountInfo.find({ walletAddress: req.params.addr });
+    const data = await UserAccountInfo.findOne({
+      walletAddress: req.params.addr,
+    });
     if (!data) {
-      res.status(404).send();
+    //   console.log(`data is empty`);
+      res.send({});
     } else {
       res.send(data);
     }
   } catch (e) {
-    res.status(404).send();
+    // console.log(`data is empty, but it is from catch block`);
+    res.status(404).send(e);
   }
 });
 

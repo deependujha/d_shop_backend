@@ -14,12 +14,10 @@ router.post("/", async (req, res) => {
       boughtOn: Date.now(),
     });
     const result = await orderData.save();
-    const thatPrd = await Product.findOne({ product_id: prd });
-    await Product.updateOne(
+    const updRes = await Product.updateOne(
       { product_id: prd },
-      { ...thatPrd, bought_by: addr }
+      { bought_by: addr }
     );
-
     res.send(result);
   } catch (e) {
     res.send(e);
@@ -45,13 +43,11 @@ router.delete("/", async (req, res) => {
   try {
     const addr = req.body.walletAddress;
     const prd = req.body.product_id;
-    const result = new UserOrderHistory.deleteOne({
+    const result = await UserOrderHistory.deleteOne({
       walletAddress: addr,
       product_id: prd,
     });
-    const thatPrd = await Product.find({ product_id: prd });
-    await Product.updateOne({ product_id: prd }, { ...thatPrd, bought_by: "" });
-
+    await Product.updateOne({ product_id: prd }, { bought_by: "" });
     res.send(result);
   } catch (e) {
     res.send(e);

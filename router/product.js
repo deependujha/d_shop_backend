@@ -5,9 +5,9 @@ const { Product } = require("../models/myModel");
 router.get("/:id", async (req, res) => {
   try {
     const _id = req.params.id;
-    const product = await Product.find({ product_id: _id });
+    const product = await Product.findOne({ product_id: _id });
     if (!product) {
-      res.status(404).send();
+      res.send({});
     } else {
       res.send(product);
     }
@@ -25,6 +25,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// for inserting new products in the database
 // router.post("/insert", async (req, res) => {
 //   try {
 //     const tb1 = new Product({

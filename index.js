@@ -6,7 +6,9 @@ const port = 5000;
 const productRouter = require("./router/product");
 const orderRouter = require("./router/order_history");
 const accountRouter = require("./router/account");
-
+app.use(cors({
+  origin: '*'
+}));
 app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 

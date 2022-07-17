@@ -1,15 +1,17 @@
 const express = require("express");
 require("./conn/mongo");
 const app = express();
-const port = 5000;
-
+const port = process.env.PORT || 3200;
+const cors = require("cors");
 const productRouter = require("./router/product");
 const orderRouter = require("./router/order_history");
 const accountRouter = require("./router/account");
-app.use(cors({
-  origin: '*'
-}));
-app.use(express.urlencoded({extended:true}));
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.use("/product", productRouter);
